@@ -1,0 +1,46 @@
+/*
+* @Author: Marte
+* @Date:   2016-12-12 18:41:23
+* @Last Modified by:   Marte
+* @Last Modified time: 2016-12-14 15:58:04
+*/
+
+@charset "utf-8";
+/* CSS Document */
+body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend{margin:0; padding:0;}
+ul,li,ol{list-style:none;}
+img,fieldset{border:0; }
+img{display:block;}
+a{text-decoration:none; color:#333;}
+h1,h2,h3,h4,h5,h6{font-weight:100;}
+body{font-size:12px; font-family:"微软雅黑";}
+input,a{outline:none;}
+
+
+#message_main{min-height:600px;margin:0 auto;width:960px;padding-top:24px;overflow:hidden;}
+
+#message_left{width:74px;height:588px;float:left;margin-right:10px;}
+#message_left li{margin-bottom:22px;background:#ddd}
+#message_left li img{width:74px;height:111px;}
+#message_left .fade{opacity:0.4}
+
+
+#message_center{width:384px;height:588px;margin-right:24px;float:left;overflow:hidden;position:relative;}
+#message_center img{position:absolute;width:384px;height:588px;}
+
+
+#message_right{width:468px;height:588px;float:left;}
+#message_right h2{font-size:22px;height:29px;}
+#message_right h3{font-size:15px;height:43px;}
+#message_right p{font-size:11px;height:17px;}
+#message_right .color{display:block;width:30px;height:30px;background:url(images/color.jpg);margin-bottom:22px;}
+#message_right ul{width:468px;height:65px;}
+#message_right li{float:left;width:98px;hieght:30px;background:#000;text-align:center;font:11px/30px "";margin-right:5px;color:#fff;margin-bottom:5px;cursor:pointer}
+#message_right .small{width:90px;height:22px;padding:3px;border:1px solid #000;background: #fff;}
+#message_right .small span{width:90px;height:22px;background:#000;line-height:22px;}
+#message_right li span{display:block;}
+#message_right .no{margin-bottom:0;}
+#message_right a{display:block;font-size:10px;color:#404040;border-bottom:1px solid #404040;width:44px;height:13px;margin:11px 0 19px;}
+#message_right .add{width:148px;height:38px;background:#000;color:#fff;font:13px/38px "";border:0;margin-top:10px}
+#message_right .add:hover{background:#8d8d8d}
+
