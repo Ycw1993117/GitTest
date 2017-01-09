@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>消息</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/swiper-3.4.1.min.css">
+    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_wbrkly4iy66r.css">
+    <script type="text/javascript" src="../js/utils.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/swiper-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            var xhr = createXHR();
+            xhr.open("GET","../js/index.json",true);
+            xhr.send();
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    var responsetext = JSON.parse(xhr.responseText);
+                    var footer = responsetext.footer;
+                    for(var i = 0; i < footer.img1.length; i++){
+                        $("footer").find("img").eq(i).attr("src",footer.img[i]);
+                    }
+                    $("footer").find("dd").removeClass('active')
+                    $("footer").find("img").eq(3).attr("src",footer.img1[3]);
+                    $("footer").find("dd").eq(3).addClass('active');
+                }
+            }
+        })
+    </script>
+</head>
+<body>
+
+    <div class="message_top">
+        <ul class="mess flt">
+            <li class="flt active">消息</li>
+            <li class="flt">通知</li>
+        </ul>
+        <span class="frt"></span>
+    </div>
+
+    <div class="message_main">
+        <span class="message_bg"></span>
+        <h2>你还没有登录</h2>
+        <h3>先去登陆吧</h3>
+        <a class="go" href="javascript:;">去登录</a>
+    </div>
+
+
+
+
+    <footer></footer>
+
+    <div class="login">
+        <span class="iconfont icon-cha"></span>
+        <input class="phone" type="text" name="" placeholder="输入手机号"><br>
+        <input class="check" type="text" name="" placeholder="验证码"><br>
+        <button type="">发送验证码</button><br>
+        <input class="agree" type="checkbox" name="" checked="checked"><span class="agree1">同意用户隐私协议</span><br>
+        <a href="javascript:;">登<span>录</span></a>
+    </div>
+</body>
+</html>

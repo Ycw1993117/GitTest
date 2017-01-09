@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我的</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/swiper-3.4.1.min.css">
+    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_5via1644rdg3nmi.css">
+    <script type="text/javascript" src="../js/utils.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/swiper-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            var xhr = createXHR();
+            xhr.open("GET","../js/index.json",true);
+            xhr.send();
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    var responsetext = JSON.parse(xhr.responseText);
+                    var footer = responsetext.footer;
+                    for(var i = 0; i < footer.img1.length; i++){
+                        $("footer").find("img").eq(i).attr("src",footer.img[i]);
+                    }
+                    $("footer").find("dd").removeClass('active')
+                    $("footer").find("img").eq(4).attr("src",footer.img1[4]);
+                    $("footer").find("dd").eq(4).addClass('active');
+                }
+            }
+        })
+    </script>
+</head>
+<body>
+
+    <div class="my_top">
+        <img class="my_logo" src="../img/my_logo.png" alt="">
+        <span class="my_login">点击登录</span>
+    </div>
+
+    <ul class="my_bottom">
+        <li>
+           <span class="iconfont icon-wuzhangdan first"></span>
+           <span>我的分期</span>
+           <span class="iconfont icon-icon07 frt"></span>
+        </li>
+
+        <li>
+           <span class="iconfont icon-riji first"></span>
+           <span>我购买的</span>
+           <span class="iconfont icon-icon07 frt"></span>
+        </li>
+
+        <li>
+           <span class="iconfont icon-zuanshi first"></span>
+           <span>我收藏的</span>
+           <span class="iconfont icon-icon07 frt"></span>
+        </li>
+
+        <li>
+           <span class="iconfont icon-daijinquan first"></span>
+           <span>我的代金券</span>
+           <span class="iconfont icon-icon07 frt"></span>
+        </li>
+
+        <li>
+           <span class="iconfont icon-dianpu first"></span>
+           <span>卖家申请</span>
+           <span class="iconfont icon-icon07 frt"></span>
+        </li>
+
+        <li>
+           <span class="iconfont icon-dingwei first"></span>
+           <span>地址管理</span>
+           <span class="iconfont icon-icon07 frt"></span>
+        </li>
+
+        <li>
+           <span class="iconfont icon-icon-duihua first"></span>
+           <span>在线客服</span>
+           <span class="iconfont icon-icon07 frt"></span>
+        </li>
+
+        <li>
+           <span class="iconfont icon-shezhi first"></span>
+           <span>设置</span>
+           <span class="iconfont icon-icon07 frt"></span>
+        </li>
+    </ul>
+
+
+    <div class="login">
+        <span class="iconfont icon-cha"></span>
+        <input class="phone" type="text" name="" placeholder="输入手机号"><br>
+        <input class="check" type="text" name="" placeholder="验证码"><br>
+        <button type="">发送验证码</button><br>
+        <input class="agree" type="checkbox" name="" checked="checked"><span class="agree1">同意用户隐私协议</span><br>
+        <a href="javascript:;">登<span>录</span></a>
+    </div>
+
+    <footer></footer>
+</body>
+</html>

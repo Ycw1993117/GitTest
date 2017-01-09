@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>闲置</title>
+    <title>首页</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/swiper-3.4.1.min.css">
+    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_wbrkly4iy66r.css">
+    <script type="text/javascript" src="../js/utils.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/swiper-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+    <style type="text/css" media="screen">
+        div.goods_list dl{
+            width: 2.8rem;
+            margin:0.13rem;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+
+            var xhr = createXHR();
+            xhr.open("GET","../js/index.json",true);
+            xhr.send();
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    var responsetext = JSON.parse(xhr.responseText);
+                    var footer = responsetext.footer;
+                    for(var i = 0; i < footer.img1.length; i++){
+                        $("footer").find("img").eq(i).attr("src",footer.img[i]);
+                    }
+                    $("footer").find("dd").removeClass('active')
+                    $("footer").find("img").eq(2).attr("src",footer.img1[2]);
+                    $("footer").find("dd").eq(2).addClass('active');
+                }
+            }
+        })
+    </script>
+</head>
+<body>
+    <div class="sale_top thing_top">
+        <h2>少铺-闲置<span class="frt"></span></h2>
+    </div>
+
+    <ul class="change clearfix">
+        <li class="flt li_active">分类</li>
+        <li class="frt">品牌</li>
+    </ul>
+
+    <div class="sale_main">
+        <ul class="sale_list">
+            <li><a href="javascript:;"><span class="frt">箱包</span></a></li>
+            <li><a href="javascript:;"><span class="flt">配饰</span></a></li>
+            <li><a href="javascript:;"><span class="frt">鞋靴</span></a></li>
+            <li><a href="javascript:;"><span class="flt">首饰</span></a></li>
+            <li><a href="javascript:;"><span class="frt">服装</span></a></li>
+        </ul>
+    </div>
+
+    <div class="brand">
+        <ul class="index frt">
+        </ul>
+
+        <div class="brand_left">
+
+        </div>
+    </div>
+
+    <div class="goods">
+        <div class="goods_top clearfix">
+            <div class="gt_top">
+                <span class="iconfont icon-icon07 flt"></span>
+                <h3>少铺-闲置</h3>
+                <span class="big frt"></span>
+
+            </div>
+            <ul>
+                <li>最新</li>
+                <li>品牌</li>
+                <li>分类</li>
+                <li>筛选</li>
+            </ul>
+
+        </div>
+        <div class="goods_list">
+        </div>
+    </div>
+
+<footer></footer>
+</body>
+</html>
